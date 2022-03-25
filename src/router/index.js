@@ -22,6 +22,12 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/edit/:id',
+    name: 'edit',
+    beforeEnter: requiredAuth,
+    component: () => import('../views/Edit.vue')
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => import('../views/Login.vue')
